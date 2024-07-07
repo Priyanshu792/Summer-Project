@@ -20,6 +20,7 @@ function startCamera() {
     }
 }
 
+
 window.onload = function() {
     startCamera();
 };
