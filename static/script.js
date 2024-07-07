@@ -7,7 +7,13 @@ const detectionsList = document.getElementById('detections');
 async function startCamera() {
     try {
         // Access the camera stream
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+            video: {
+                facingMode: {
+                    ideal: 'environment' // request rear camera
+                }
+            }
+        });
         videoElement.srcObject = stream;
 
         // Load the COCO-SSD model
