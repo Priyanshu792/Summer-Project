@@ -1,0 +1,35 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#camera-stream {
+    width: 90%;
+    height: 100%;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#info-text {
+    width: 90%;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+.navbar-brand svg {
+    margin-bottom: 3px;
+}
