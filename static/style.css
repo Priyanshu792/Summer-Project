@@ -7,6 +7,10 @@ body, html {
     align-items: center;
 }
 
+.display-4{
+    font-size: 3rem;
+}
+
 #camera-stream {
     width: 90%;
     height: 100%;
