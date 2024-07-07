@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Summer-Project/static/style.css">
+    <title>Real-Time Object Detection</title>
+  </head>
+  <body>
+    <div class="container-fluid d-flex flex-column min-vh-100 justify-content-between">
+      <div class="row mt-3">
+        <div class="col-12 text-center">
+          <h1 class="display-4">Real-Time Object Detection</h1>
+        </div>
+      </div>
+      <div class="row mt-2 flex-grow-1">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+          <video id="camera-stream" autoplay playsinline></video>
+        </div>
+        <div class="col-12 text-center mt-3">
+          <div id="info-text">
+            <p class="lead">Placeholder text for object descriptions will appear here.</p>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar fixed-bottom navbar-light bg-light">
+        <div class="container-fluid d-flex justify-content-around">
+          <a class="navbar-brand" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 3.293l6 6V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9.293l6-6zm5 6.293L8 4.293 3 9.586V13h2v-2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2h2V9.586z"/>
+              <path fill-rule="evenodd" d="M7 13h2v2H7v-2zm1-9.293L1.5 9H2V8h12v1h.5L8 3.707z"/>
+            </svg>
+            Home
+          </a>
+          <a class="navbar-brand" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+              <path d="M8 4.466a3.533 3.533 0 1 1 0 7.066 3.533 3.533 0 0 1 0-7.066zM7 0v1.048a5.354 5.354 0 0 0-1.058.27L5.07.579a.995.995 0 0 0-.753-.193L3.1.99l-.573 1.062c-.403.194-.78.43-1.133.705L0 2.528v1.942l1.048.458c.273.479.598.922.966 1.315l-.57 1.07a1.007 1.007 0 0 0-.193.752l.579 1.215L3.1 12.1c.148.354.41.646.753.753l1.215.579c.187.09.397.115.579.072l1.07-.57c.393.367.836.693 1.315.966l.458 1.048H10.47l.457-1.048c.479-.273.922-.598 1.315-.966l1.07.57a.995.995 0 0 0 .752.193l1.215-.579c.343-.107.605-.399.753-.753l.579-1.215-.57-1.07a5.37 5.37 0 0 0 1.31-1.315l1.048-.458V5.47l-1.048-.457a5.352 5.352 0 0 0-.966-1.315l.57-1.07a.995.995 0 0 0 .193-.752L14.9 1.753c-.107-.343-.399-.605-.753-.753L12.931.42l-1.07.57A5.353 5.353 0 0 0 10.47.7V0H8zm0 1a6.53 6.53 0 0 1 6.53 6.53A6.53 6.53 0 0 1 8 14.061 6.53 6.53 0 0 1 1.47 7.53 6.53 6.53 0 0 1 8 1z"/>
+            </svg>
+            Settings
+          </a>
+          <a class="navbar-brand" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+              <path d="M7.982 1.566a6.5 6.5 0 1 1 0 12.868 6.5 6.5 0 0 1 0-12.868zM8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14z"/>
+              <path d="M5.255 5.786a2.148 2.148 0 1 1 4.3.001c0 .581-.176.931-.509 1.266-.324.325-.767.605-1.322.97-.483.313-.698.537-.772.751-.071.21-.074.326-.071.442h1.017c.002-.118.004-.326.071-.442.07-.121.194-.248.482-.439.373-.245.848-.574 1.207-1.004.473-.585.708-1.303.708-2.051a3.147 3.147 0 0 0-6.3-.001c0 .927.392 1.685 1.007 2.27.62.588 1.47.92 2.493.92v1.013c-1.4 0-2.4-.64-3.01-1.387-.51-.639-.77-1.425-.77-2.228z"/>
+              <path d="M6.937 10a.563.563 0 1 0 1.126 0 .563.563 0 0 0-1.126 0z"/>
+            </svg>
+            Help
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="/Summer-Project/static/script.js"></script>
+  </body>
+</html>
